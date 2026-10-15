@@ -1,0 +1,583 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "TRIMESH",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\VOXELIZATION\\TRIMESH\\UPSTREAM_CLONE",
+    "git": {
+      "head": "",
+      "url": "https://github.com/the-anticloud/OPENMRS_CORE.git",
+      "branch": "master",
+      "committed_at": "2026-09-29T11:06:59+04:00"
+    }
+  },
+  "metrics": {
+    "files_total": 562,
+    "source_files_scanned": 263,
+    "lines_of_code": 80587,
+    "languages": {
+      ".py": 260,
+      ".dxf": 56,
+      ".obj": 35,
+      ".ply": 30,
+      ".stl": 28,
+      ".json": 22,
+      ".glb": 15,
+      ".md": 11,
+      ".zip": 11,
+      ".ipynb": 9,
+      ".svg": 8,
+      "(none)": 7,
+      ".3dxml": 6,
+      ".mtl": 6,
+      ".3mf": 6
+    }
+  },
+  "licence": {
+    "spdx": "MIT",
+    "class": "A",
+    "source_file": "LICENSE.md",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 1,
+    "unique": 1,
+    "by_ecosystem": {
+      "pypi": 1
+    },
+    "list": [
+      {
+        "ecosystem": "pypi",
+        "name": "numpy",
+        "version": ">=1.21",
+        "source_file": "pyproject.toml",
+        "raw": "numpy>=1.21"
+      }
+    ]
+  },
+  "owasp_top10": {
+    "total_findings": 58,
+    "files_with_findings": 53,
+    "severity": {
+      "high": 7,
+      "medium": 1,
+      "low": 50
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "trimesh/proximity.py",
+            "line": 158,
+            "cwe": "CWE-327",
+            "snippet": "# the MD5 during all of the subsequent advanced indexing"
+          }
+        ]
+      },
+      "A03-Injection": {
+        "count": 7,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "trimesh/base.py",
+            "line": 3361,
+            "cwe": "CWE-95",
+            "snippet": "result = eval(statement)"
+          },
+          {
+            "severity": "high",
+            "file": "trimesh/exchange/gltf/__init__.py",
+            "line": 1913,
+            "cwe": "CWE-89",
+            "snippet": "# kwargs to be passed to scene.graph.update\n        kwargs = {\"frame_from\": names[a], \"frame_to\": names[b]}"
+          },
+          {
+            "severity": "high",
+            "file": "tests/notebooks.py",
+            "line": 178,
+            "cwe": "CWE-95",
+            "snippet": "exec(script, globals())"
+          },
+          {
+            "severity": "high",
+            "file": "tests/test_base.py",
+            "line": 80,
+            "cwe": "CWE-95",
+            "snippet": "res = eval(expr)"
+          },
+          {
+            "severity": "high",
+            "file": "tests/test_cache.py",
+            "line": 323,
+            "cwe": "CWE-95",
+            "snippet": "eval(f\"m.{method}(*A)\")"
+          },
+          {
+            "severity": "high",
+            "file": "tests/test_mesh.py",
+            "line": 129,
+            "cwe": "CWE-502",
+            "snippet": "r = g.pickle.loads(pickle)"
+          },
+          {
+            "severity": "high",
+            "file": "helpers/draco.bash",
+            "line": 17,
+            "cwe": "CWE-78",
+            "snippet": "make -j$(nproc)"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 33,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "trimesh/base.py",
+            "line": 2734,
+            "cwe": "CWE-",
+            "snippet": "# todo : one could take the `return_collapses=True` array and use it to"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/convex.py",
+            "line": 130,
+            "cwe": "CWE-",
+            "snippet": "# TODO : not included non-boolean options"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/geometry.py",
+            "line": 260,
+            "cwe": "CWE-",
+            "snippet": "# TODO"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/graph.py",
+            "line": 750,
+            "cwe": "CWE-",
+            "snippet": "TODO : re-write this with sparse matrix operations"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/points.py",
+            "line": 377,
+            "cwe": "CWE-",
+            "snippet": "# TODO : should this just use SceneViewer?"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/primitives.py",
+            "line": 301,
+            "cwe": "CWE-",
+            "snippet": "# this whole __getattr__ is a little hacky"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/transformations.py",
+            "line": 142,
+            "cwe": "CWE-",
+            "snippet": "Itzhack Y Bar-Itzhack, J Guid Contr Dynam. 2000. 23(6): 1085-1087."
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/voxel/base.py",
+            "line": 328,
+            "cwe": "CWE-",
+            "snippet": "# TODO jackd: more efficient implementation?"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/visual/material.py",
+            "line": 237,
+            "cwe": "CWE-",
+            "snippet": "TODO : IMPLEMENT"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/scene/cameras.py",
+            "line": 16,
+            "cwe": "CWE-",
+            "snippet": "TODO: skew is not supported"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/scene/scene.py",
+            "line": 682,
+            "cwe": "CWE-",
+            "snippet": "TODO : construct a parent non-geometry node for containing every group."
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/ray/ray_pyembree.py",
+            "line": 171,
+            "cwe": "CWE-",
+            "snippet": "# TODO: switch `run(..., output=True)` once embreex>=4.4.0rc1 is stable"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/path/entities.py",
+            "line": 446,
+            "cwe": "CWE-",
+            "snippet": "# TODO: handle text size better"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/path/polygons.py",
+            "line": 617,
+            "cwe": "CWE-",
+            "snippet": "# TODO : this should probably have some option to"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/path/exchange/dxf.py",
+            "line": 621,
+            "cwe": "CWE-",
+            "snippet": "# TODO : convert RGBA entity.color to index"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/path/exchange/svg_io.py",
+            "line": 408,
+            "cwe": "CWE-",
+            "snippet": "# todo : support rounded rectangle"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/exchange/cascade.py",
+            "line": 36,
+            "cwe": "CWE-",
+            "snippet": "# TODO : update upstream `cascadio` to accept bytes objects"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/exchange/dae.py",
+            "line": 274,
+            "cwe": "CWE-",
+            "snippet": "# TODO: convert collada cameras to trimesh cameras"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/exchange/obj.py",
+            "line": 444,
+            "cwe": "CWE-",
+            "snippet": "# TODO: probably need to support 8 and 12 columns for quads"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/exchange/urdf.py",
+            "line": 30,
+            "cwe": "CWE-",
+            "snippet": "# TODO: fix circular import"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/exchange/gltf/__init__.py",
+            "line": 1191,
+            "cwe": "CWE-",
+            "snippet": "# TODO add color support to Path object"
+          },
+          {
+            "severity": "low",
+            "file": "tests/corpus.py",
+            "line": 255,
+            "cwe": "CWE-",
+            "snippet": "# todo : why doesn't this pass"
+          },
+          {
+            "severity": "low",
+            "file": "tests/test_camera.py",
+            "line": 112,
+            "cwe": "CWE-",
+            "snippet": "# TODO(unknown): find the way to test it correctly"
+          },
+          {
+            "severity": "low",
+            "file": "tests/test_dae.py",
+            "line": 11,
+            "cwe": "CWE-",
+            "snippet": "# TODO : REMOVE WHEN UPSTREAM RELEASE FIXED"
+          },
+          {
+            "severity": "low",
+            "file": "tests/test_gltf.py",
+            "line": 413,
+            "cwe": "CWE-",
+            "snippet": "# TODO : restore"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 0,
+        "findings": []
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 17,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "trimesh/bounds.py",
+            "line": 33,
+            "cwe": "CWE-319",
+            "snippet": "http://www.qhull.org/html/qh-quick.htm#options"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/convex.py",
+            "line": 38,
+            "cwe": "CWE-319",
+            "snippet": "More details available at: http://www.qhull.org/html/qh-quick.htm#options"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/poses.py",
+            "line": 265,
+            "cwe": "CWE-319",
+            "snippet": "http://goldberg.berkeley.edu/pubs/eps.pdf."
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/sample.py",
+            "line": 33,
+            "cwe": "CWE-319",
+            "snippet": "http://mathworld.wolfram.com/TrianglePointPicking.html"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/transformations.py",
+            "line": 45,
+            "cwe": "CWE-319",
+            "snippet": "`Christoph Gohlke <http://www.lfd.uci.edu/~gohlke/>`_"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/triangles.py",
+            "line": 224,
+            "cwe": "CWE-319",
+            "snippet": "http://www.geometrictools.com/Documentation/PolyhedralMassProperties.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/path/intersections.py",
+            "line": 11,
+            "cwe": "CWE-319",
+            "snippet": "http://geomalgorithms.com/a05-_intersect-1.html"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/path/packing.py",
+            "line": 28,
+            "cwe": "CWE-319",
+            "snippet": "http://www.blackpawn.com/texts/lightmaps/"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/exchange/binvox.py",
+            "line": 340,
+            "cwe": "CWE-319",
+            "snippet": "howpublished = {{\\tt http://www.patrickmin.com/binvox} or"
+          },
+          {
+            "severity": "low",
+            "file": "trimesh/exchange/threemf.py",
+            "line": 319,
+            "cwe": "CWE-319",
+            "snippet": "None: \"http://schemas.microsoft.com/3dmanufacturing/core/2015/02\","
+          },
+          {
+            "severity": "low",
+            "file": "tests/generic.py",
+            "line": 377,
+            "cwe": "CWE-319",
+            "snippet": "yield \"http://localhost:{}\".format(t.port)"
+          },
+          {
+            "severity": "low",
+            "file": "tests/test_expansion.py",
+            "line": 47,
+            "cwe": "CWE-319",
+            "snippet": "<model unit=\"millimeter\" xmlns=\"http://schemas.microsoft.com/3dmanufacturing/core/2015/02\">"
+          },
+          {
+            "severity": "low",
+            "file": "tests/test_inertia.py",
+            "line": 130,
+            "cwe": "CWE-319",
+            "snippet": "# http://thescipub.com/pdf/jmssp.2005.8.11.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "tests/test_paths.py",
+            "line": 409,
+            "cwe": "CWE-319",
+            "snippet": "s = \"\"\"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"97.5mm\" height=\"35mm\" viewBox=\"-17.5 0 97.5 35\">"
+          },
+          {
+            "severity": "low",
+            "file": "tests/test_resolvers.py",
+            "line": 40,
+            "cwe": "CWE-319",
+            "snippet": "yield f\"http://127.0.0.1:{server.server_port}/models/thing.obj\""
+          },
+          {
+            "severity": "low",
+            "file": "tests/test_svg.py",
+            "line": 141,
+            "cwe": "CWE-319",
+            "snippet": "svg = f'<svg xmlns=\"http://www.w3.org/2000/svg\">{element}</svg>'"
+          },
+          {
+            "severity": "low",
+            "file": "docs/coverage_badge.py",
+            "line": 16,
+            "cwe": "CWE-319",
+            "snippet": "TEMPLATE = \"\"\"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"{total}\" height=\"20\" role=\"img\" aria-label=\"coverage: {pct}\">"
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 3,
+    "files_with_findings": 3,
+    "severity": {
+      "high": 0,
+      "medium": 2,
+      "low": 1
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 2,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "trimesh/interfaces/generic.py",
+            "line": 49,
+            "cwe": "CWE-1336",
+            "snippet": "script_text = Template(self.script).substitute(self.replacement)"
+          },
+          {
+            "severity": "medium",
+            "file": "trimesh/exchange/ply.py",
+            "line": 416,
+            "cwe": "CWE-1336",
+            "snippet": "export = [Template(\"\".join(header)).substitute(header_params).encode(\"utf-8\")]"
+          }
+        ]
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "trimesh/visual/color.py",
+            "line": 711,
+            "cwe": "CWE-",
+            "snippet": "# chroma and other values for the equation"
+          }
+        ]
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:b3b3f24f-8ad5-55ed-b71e-65270e93a63f",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-06T05:54:56Z",
+      "component": {
+        "type": "application",
+        "name": "TRIMESH",
+        "version": "83b357604d34",
+        "bom-ref": "pkg:generic/anticloud/TRIMESH@83b357604d34",
+        "purl": "pkg:generic/anticloud/TRIMESH@83b357604d34",
+        "licenses": [
+          {
+            "license": {
+              "id": "MIT"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": ""
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/the-anticloud/OPENMRS_CORE.git"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "numpy",
+        "version": ">=1.21",
+        "purl": "pkg:pypi/numpy@1.21",
+        "bom-ref": "pypi/numpy@>=1.21"
+      }
+    ]
+  },
+  "elapsed_seconds": 10.48
+}

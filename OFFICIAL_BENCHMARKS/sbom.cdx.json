@@ -1,0 +1,46 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:b3b3f24f-8ad5-55ed-b71e-65270e93a63f",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-06T05:54:56Z",
+    "component": {
+      "type": "application",
+      "name": "TRIMESH",
+      "version": "83b357604d34",
+      "bom-ref": "pkg:generic/anticloud/TRIMESH@83b357604d34",
+      "purl": "pkg:generic/anticloud/TRIMESH@83b357604d34",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": ""
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": "https://github.com/the-anticloud/OPENMRS_CORE.git"
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "numpy",
+      "version": ">=1.21",
+      "purl": "pkg:pypi/numpy@1.21",
+      "bom-ref": "pypi/numpy@>=1.21"
+    }
+  ]
+}
